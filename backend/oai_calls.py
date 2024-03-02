@@ -41,9 +41,12 @@ def simpleCall(message):
 def getTextOfResponse(response):
     text = ""
     try:
-        text=response.choices[0].message
+        text=response.choices[0].message.content
     except Exception:
         raise ValueError
     return text
 
-
+if __name__ == "__main__":
+    a = simpleCall("hello")
+    b = getTextOfResponse(a)
+    print(b)
