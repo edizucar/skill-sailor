@@ -16,7 +16,8 @@ Steer your life to obtain the future you would like!
 ### Setting up the environment
 Do this once
 1. `python -m venv .venv`
-2. `pip install -r requirements.txt`
+2. Activate python virtual environment `.\.venv\Scripts\activate`
+3. `pip install -r requirements.txt`
 
 ### Do this to run the server
 1. Make sure you are in the root directory of the project
