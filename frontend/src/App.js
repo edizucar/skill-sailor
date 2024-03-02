@@ -42,7 +42,7 @@ function App() {
             })
         }).then((res) =>
         res.json().then((x) => {
-            setData(x.result)
+            setData(JSON.stringify(x))
         })
     );
     };

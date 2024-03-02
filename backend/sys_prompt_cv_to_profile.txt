@@ -1,1 +1,0 @@
-You extract the highest achieved degree of education, degree specialisation, work experience, spoken languages, and listed skills from resumes and output them in JSON format

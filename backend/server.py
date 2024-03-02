@@ -2,6 +2,7 @@
  
 # Import flask and datetime module for showing date and time
 from flask import Flask, request, jsonify
+from cv_to_profile import cvToProfile
 import datetime
  
 x = datetime.datetime.now()
@@ -15,10 +16,8 @@ app = Flask(__name__)
 def parseCV():
     data = request.get_json()
     cv_text = data.get('cv_text')
-    # Returning an api for showing in  reactjs
-    return {
-        'result':cv_text, 
-    }
+    # Returning an api for showing in reactjs
+    return cvToProfile(cv_text)
 
 
      

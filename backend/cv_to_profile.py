@@ -5,13 +5,20 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 
-WHITELIST = "abcdefghijklmnopqrstuvwxyz"
+WHITELIST = "abcdefghijklmnopqrstuvwxyz.,-:1234567890 "
 PROMPT_FILE = "backend/prompt_cv_to_profile.txt"
-SYS_PROMPT_FILE = "backend/sys_prompt_cv_to_profile.txt"
+SYS_PROMPT = "You extract and summarise information from CVs and output them in 1-2 sentences. You do not add any comments. The CV will be contained in triple angle braces."
 MODEL="gpt-3.5-turbo"
 TEST_CV_FILE = "backend/test_cv.txt"
 
-def cvToProfile(cvFile):
+promptsDict = {
+    "education":"Extract and summarise in 1-2 sentences the highest achieved degree of education and specialisation from the following resume. If any piece of information can't be obtained, output \"No education history\".",
+    "experience":"Extract the work experience from the following resume. If any piece of information can't be obtained, output \"No work history\".",
+    "languages":"Extract the spoken languages from the following resume. If any piece of information can't be obtained, output \"No listed languages\".",
+    "skills":"Extract the listed skills from the following resume. If any piece of information can't be obtained, output \"No listed skills\"."
+    }
+
+def cvToProfile(cv):
     """
     Extract education, experience, spoken languages and skills from a CV and populate a profile dictionary with them.
 
@@ -21,21 +28,26 @@ def cvToProfile(cvFile):
     Returns:
         profile (dict): A JSON dictionary containing the Education, Experience, and Skill lists.
     """
-    with  open(PROMPT_FILE) as f:
-        prompt = f.read()
-    with open(cvFile) as f:
-        cv = f.read()
-    prompt += "\n" + cv
-    messageClean = removeNonWhitelistedChars(prompt, WHITELIST)
-    try:
-        response = simpleCall(messageClean)
+    cvClean = removeNonWhitelistedChars(cv, WHITELIST)
+    profile = {}
+    for category in promptsDict.keys():
+        prompt = promptsDict[category] + "\n" + "<<<" + cvClean + ">>>"
+        response = simpleCall(prompt)
         output = getTextOfResponse(response)
-        print(output)
-        profile = json.loads(output)
-    except Exception:
-        raise ValueError("GPT Output profile not a valid JSON: \n" + output)
+        outputClean = removeNonWhitelistedChars(output, WHITELIST)
+        profile[category] = outputClean
 
     return profile
+
+def readCv(fileName):
+    with open(fileName) as f:
+        cv = f.read()
+    return cv
+
+def readPrompt(fileName):
+    with open(fileName) as f:
+        prompt = f.readlines()
+    return prompt
 
 def removeNonWhitelistedChars(input_string, whitelist):
     """
@@ -55,7 +67,7 @@ def simpleCall(message):
     Assume message is clean (no funky characters)
     """
     client = OpenAI()
-    system_message=SYS_PROMPT_FILE
+    system_message=SYS_PROMPT
 
     response = client.chat.completions.create(
         model=MODEL,
@@ -74,5 +86,3 @@ def getTextOfResponse(response):
     except Exception:
         raise ValueError
     return text
-
-print(cvToProfile(TEST_CV_FILE))

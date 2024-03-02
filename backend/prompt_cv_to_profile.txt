@@ -1,6 +1,4 @@
-Extract the highest achieved degree of education, degree specialisation, work experience, spoken languages, and listed skills from the following resume. Structure the output in JSON format with keys ['education', 'experiences', 'languages', 'skills'].
-The value corresponding to key 'education' has format {'degree title': '', 'major': '', 'university': ''}
-The value corresponding to key 'experiences' contains values {'job position title': '', 'company name': '', 'time at position in years': '', 'achievments': ''}
-The value corresponding to key 'language' is a list of skills in the format ['language 1', 'language 2']
-The value corresponding to key 'skills' is a list of skills in the format ['skill 1', 'skill 2']
-If any piece of information can't be obtained, leave the corresponding field empty.
+Extract and summarise in 1-2 sentences the highest achieved degree of education and specialisation from the following resume. If any piece of information can't be obtained, output "No education history".
+Extract the work experience from the following resume. If any piece of information can't be obtained, output "No work history".
+Extract the spoken languages from the following resume. If any piece of information can't be obtained, output "No listed languages".
+Extract the listed skills from the following resume. If any piece of information can't be obtained, output "No listed skills".
