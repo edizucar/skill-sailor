@@ -13,6 +13,6 @@ Steer your life to obtain the future you would like!
 ## Simple run
 1. Make sure you are in the root directory of the project
 2. Activate python virtual environment `.\.venv\Scripts\activate`
-2. Run `python backend/server.js`
+2. Run `python backend/server.py`
 3. Run `cd frontend`
 4. Run `npm start`
