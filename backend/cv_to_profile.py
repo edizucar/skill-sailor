@@ -7,6 +7,7 @@ load_dotenv()
 
 WHITELIST = "abcdefghijklmnopqrstuvwxyz"
 PROMPT_FILE = "backend/prompt_cv_to_profile.txt"
+SYS_PROMPT_FILE = "backend/sys_prompt_cv_to_profile.txt"
 MODEL="gpt-3.5-turbo"
 TEST_CV_FILE = "backend/test_cv.txt"
 
@@ -54,7 +55,7 @@ def simpleCall(message):
     Assume message is clean (no funky characters)
     """
     client = OpenAI()
-    system_message="You extract the highest achieved degree of education, degree specialisation, work experience, spoken languages, and listed skills from resumes and output them in JSON format"
+    system_message=SYS_PROMPT_FILE
 
     response = client.chat.completions.create(
         model=MODEL,
