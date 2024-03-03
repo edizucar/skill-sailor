@@ -78,4 +78,5 @@ def profileToStr(profile):
     result =  ", ".join([f"{key}: {value}" for key, value in profile.items()])
     return result
 
-print(getIndustries(TEST_PROFILE_2)["payload"])
+if __name__ == "__main__":
+    print(getIndustries(TEST_PROFILE_2)["payload"])
