@@ -1,15 +1,11 @@
 from openai import OpenAI
-import os
-import json
-
 from dotenv import load_dotenv
 load_dotenv()
 
 WHITELIST = "abcdefghijklmnopqrstuvwxyz.,-:1234567890 "
-PROMPT_FILE = "backend/prompt_cv_to_profile.txt"
-SYS_PROMPT = "You extract and summarise information from CVs and output them in 1-2 sentences. You do not add any comments. The CV will be contained in triple angle braces."
+SYS_PROMPT = "You extract and realistically summarise information from CVs and output them in 1-2 sentences. You do not add any comments. The CV will be contained in triple angle braces."
 MODEL="gpt-3.5-turbo"
-TEST_CV_FILE = "backend/test_cv.txt"
+TEST_CV_FILE = "backend/test_cv_2.txt"
 
 promptsDict = {
     "education":"Extract and summarise in 1-2 sentences the highest achieved degree of education and specialisation from the following resume. If any piece of information can't be obtained, output \"No education history\".",
@@ -86,3 +82,5 @@ def getTextOfResponse(response):
     except Exception:
         raise ValueError
     return text
+
+print(cvToProfile(readCv(TEST_CV_FILE)))
