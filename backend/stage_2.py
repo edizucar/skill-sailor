@@ -6,8 +6,8 @@ WHITELIST = "abcdefghijklmnopqrstuvwxyz.,-:1234567890 "
 MODEL="gpt-3.5-turbo"
 TEST_CV_FILE = "backend/test_cv.txt"
 
-SYS_PROMPT = "You are a careers advisor and recommend the best types of job for people based on their chosen sector and education, experience, and skills listed in their profile. You do not add any comments. The profile will be contained in triple angle braces."
-BASE_PROMPT = "Suggest the top three different jobs in the {0} sector for the person with the following education and experience. Recommend exclusively jobs highly relevant to this sector: {0}. Return only the job titles without further comments in the format of a python list, for example: ['Job 1', 'Job 2', 'Job 3'].\n"
+SYS_PROMPT = "You are a careers advisor and recommend the best types of job for immigrants in the UK based on their chosen sector and education, experience, and skills listed in their profile. You do not add any comments. The profile will be contained in triple angle braces."
+BASE_PROMPT = "Suggest three different jobs in the {0} sector for the person with the following education and experience. Recommend exclusively jobs highly relevant to this sector: {0}. Return only the job titles without further comments in the format of a python list, for example: ['Job 1', 'Job 2', 'Job 3'].\n"
 
 TEST_PROFILE = {'education': 'bachelor of science in computer science from new york university, graduated in may 2010. specialisations in full stack development with experience in leading teams, designing and implementing scalable architectures, developing restful apis, integrating third-party services, and working with various programming languages and databases.', 
                 'experience': 'the candidate has the following work experience:1. senior full stack developer at openai in san francisco from july 2016 to present.   - led a team in designing and implementing a scalable microservices architecture.   - developed and maintained restful apis using node.js, express, and mongodb.   - designed and implemented front-end interfaces using react and angular.   - integrated third-party apis for payment processing and user authentication.   - implemented automated testing with jest and cypress.2. full stack developer at tesla in austin from january 2011 to june 2016.   - collaborated on delivering web applications.   - developed backend services and apis using python with django and flask.   - designed user interfaces using html, css, and javascript.   - conducted code reviews and provided feedback.', 
@@ -78,4 +78,4 @@ def profileToStr(profile):
     result =  ", ".join([f"{key}: {value}" for key, value in profile.items()])
     return result
 
-print(getJobs(TEST_PROFILE_2, "Food industry")["payload"])
+print(getJobs(TEST_PROFILE_2, "Administrative")["payload"])
