@@ -82,5 +82,3 @@ def getTextOfResponse(response):
     except Exception:
         raise ValueError
     return text
-
-print(cvToProfile(readCv(TEST_CV_FILE)))

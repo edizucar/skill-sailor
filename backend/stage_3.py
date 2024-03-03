@@ -44,8 +44,10 @@ def getSpecialisations(profile, industry, job):
             print("Could not load specialisations dictionary in attempt: " + str(attempt))
         raise Exception("Could not load response dict.")
 
-
-    return {"payload": specialisationsDict}
+    a = []
+    for key in specialisationsDict.keys():
+        a.append(key + ": " + specialisationsDict[key])
+    return {"payload": a}
 
 def removeNonWhitelistedChars(input_string, whitelist):
     """
@@ -90,4 +92,5 @@ def profileToStr(profile):
     result =  ", ".join([f"{key}: {value}" for key, value in profile.items()])
     return result
 
-print(getSpecialisations(TEST_PROFILE_2, "Administrative", "Office Manager")["payload"])
+if __name__ == "__main__":
+    print(getSpecialisations(TEST_PROFILE_2, "Administrative", "Office Manager")["payload"])

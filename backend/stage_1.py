@@ -34,7 +34,10 @@ def getIndustries(profile):
     industries = getTextOfResponse(response, 0)
     # for choice in range(3):
     #     industries.append()
-    return {"payload": industries}
+    print("original string", industries,'\n')
+    l = string_to_list(industries)
+    print('list item', l[0])
+    return {"payload": l}
 
 def removeNonWhitelistedChars(input_string, whitelist):
     """
@@ -78,4 +81,13 @@ def profileToStr(profile):
     result =  ", ".join([f"{key}: {value}" for key, value in profile.items()])
     return result
 
-print(getIndustries(TEST_PROFILE_2)["payload"])
+def string_to_list(input_string):
+    # Trim the leading and trailing square brackets
+    trimmed_string = input_string.replace('[','').replace(']','').replace("'",'')
+    # Split the string by ','
+    items = trimmed_string.split(",")
+    # Remove leading and trailing single quotes from each item
+    return items
+
+if __name__ == "__main__":
+    print(getIndustries(TEST_PROFILE_2)["payload"])

@@ -1,0 +1,23 @@
+.StageOneOptions {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:2px solid grey;
+    border-radius: 5px;
+    position: absolute;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+  }
+
+.arrow-holder {
+    position: absolute; /* Position the div relative to the viewport */
+    left: -100%; /* Position it just off the left edge of the screen */
+    width: 100px; /* Set a specific width or as needed */
+    height: 100px; /* Set a specific height or as needed */
+    /* opacity: 0; Make it invisible */
+    background-color: #000; /* Optional: for visualization, if needed */
+}

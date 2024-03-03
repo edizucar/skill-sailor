@@ -1,38 +1,38 @@
-Education
+    Education
 
-Bachelor of Science in Computer Science
-New York University, New York, NY
-Graduated: May 2010
+    Bachelor of Science in Computer Science
+    New York University, New York, NY
+    Graduated: May 2010
 
-Work Experience
+    Work Experience
 
-Senior Full Stack Developer
-OpenAI, San Francisco, CA
-July 2016 - Present
+    Senior Full Stack Developer
+    OpenAI, San Francisco, CA
+    July 2016 - Present
 
-    Led a team of developers in the design and implementation of a scalable microservices architecture.
-    Developed and maintained RESTful APIs using Node.js, Express, and MongoDB.
-    Designed and implemented responsive front-end interfaces using modern JavaScript frameworks such as React and Angular.
-    Integrated third-party APIs and services for payment processing and user authentication.
-    Implemented automated testing with Jest and Cypress, resulting in a 30% reduction in bug reports.
+        Led a team of developers in the design and implementation of a scalable microservices architecture.
+        Developed and maintained RESTful APIs using Node.js, Express, and MongoDB.
+        Designed and implemented responsive front-end interfaces using modern JavaScript frameworks such as React and Angular.
+        Integrated third-party APIs and services for payment processing and user authentication.
+        Implemented automated testing with Jest and Cypress, resulting in a 30% reduction in bug reports.
 
-Full Stack Developer
-Tesla, Austin, TX
-January 2011 - June 2016
+    Full Stack Developer
+    Tesla, Austin, TX
+    January 2011 - June 2016
 
-    Worked collaboratively with a cross-functional team to deliver web applications from concept to production.
-    Developed backend services and APIs using Python with Django and Flask frameworks.
-    Implemented database schema designs and optimized database queries for performance.
-    Designed and implemented user interfaces using HTML, CSS, and JavaScript.
-    Conducted code reviews and provided constructive feedback to team members.
+        Worked collaboratively with a cross-functional team to deliver web applications from concept to production.
+        Developed backend services and APIs using Python with Django and Flask frameworks.
+        Implemented database schema designs and optimized database queries for performance.
+        Designed and implemented user interfaces using HTML, CSS, and JavaScript.
+        Conducted code reviews and provided constructive feedback to team members.
 
-Skills
+    Skills
 
-    Programming Languages: JavaScript (Node.js, React, Angular), Python
-    Databases: MongoDB, MySQL, PostgreSQL
-    Web Technologies: HTML5, CSS3, RESTful APIs, GraphQL
-    Version Control: Git, GitHub
-    Development Tools: VS Code, Docker, Postman
-    Testing: Jest, Cypres
+        Programming Languages: JavaScript (Node.js, React, Angular), Python
+        Databases: MongoDB, MySQL, PostgreSQL
+        Web Technologies: HTML5, CSS3, RESTful APIs, GraphQL
+        Version Control: Git, GitHub
+        Development Tools: VS Code, Docker, Postman
+        Testing: Jest, Cypres
 
-Spoken languages: English, Japanese (B1), German (intermediate)
+    Spoken languages: English, Japanese (B1), German (intermediate)
